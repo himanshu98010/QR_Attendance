@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qr_attendance/StudentButton.dart';
-import 'package:qr_attendance/TeacherButton.dart';
+import 'package:qr_attendance/Student/StudentButton.dart';
+import 'package:qr_attendance/Teacher/TeacherButton.dart';
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -13,21 +13,37 @@ class LoginPage extends StatelessWidget {
           fit: BoxFit.cover
         )
       ),
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(''),
-                Teacher(),
-                SizedBox(
-                  height: 30,
+        child: Stack(
+          children: [
+            Container(
+              padding: EdgeInsets.only(left: 35 , top: 90),
+              child: Text('My Attendance' ,
+                style: TextStyle(
+                  decoration: TextDecoration.none,
+                  fontSize: 45,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black
                 ),
-                Student()
-              ],
+              ),
             ),
-          ),
+            Scaffold(
+              backgroundColor: Colors.transparent,
+              body: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(''),
+                    Teacher(),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Student()
+                  ],
+                ),
+              ),
+            ),
+
+          ],
         ),
     );
   }
