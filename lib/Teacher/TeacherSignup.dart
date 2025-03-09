@@ -37,35 +37,73 @@ class _TeacherSignupState extends State<TeacherSignup> {
             SingleChildScrollView(
               child: Container(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.5,
+                    top: MediaQuery.of(context).size.height * 0.28,
                     left: 40,
                     right: 40),
                 color: Colors.transparent,
                 child: Column(
                   children: [
-                    TextField(
-                      decoration: InputDecoration(
-                          fillColor: Colors.grey.shade200,
-                          filled: true,
-                          hintText: 'Enter your E-mail',
-                          border: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                width: 10,
-                              ),
-                              borderRadius: BorderRadius.circular(10))),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 25,bottom: 10),
+                      child: TextField(
+                        decoration: InputDecoration(
+
+                            fillColor: Colors.grey.shade200,
+                            filled: true,
+                            hintText: 'Enter your Name',
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  width: 10,
+                                ),
+                                borderRadius: BorderRadius.circular(10)
+                            )
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 25,bottom: 10),
+                      child: TextField(
+                        decoration: InputDecoration(
+
+                            fillColor: Colors.grey.shade200,
+                            filled: true,
+                            hintText: 'Enter your Email',
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  width: 10,
+                                ),
+                                borderRadius: BorderRadius.circular(10)
+                            )
+                        ),
+                      ),
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.only(top: 25),
+                      child: TextField(
+                        decoration: InputDecoration(
+                            fillColor: Colors.grey.shade200,
+                            filled: true,
+                            hintText: 'Enter your Password',
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  width: 10,
+                                ),
+                                borderRadius: BorderRadius.circular(10))),
+                      ),
                     ),// Default selected value
 
 
 
             SizedBox(
-                      height: 40,
+              height: 40,
                     ),
                     TextField(
                       obscureText: true,
                       decoration: InputDecoration(
                           fillColor: Colors.grey.shade200,
                           filled: true,
-                          hintText: 'Enter your Password',
+                          hintText: 'Enter Key',
                           border: OutlineInputBorder(
                               borderSide: BorderSide(
                                 width: 10,
@@ -82,7 +120,7 @@ class _TeacherSignupState extends State<TeacherSignup> {
                       ),
                       child: Container(
                         width: 200,
-                        height: 100,
+                        height: 45,
                         child: const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

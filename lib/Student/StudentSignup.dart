@@ -38,7 +38,7 @@ class _StudentSignupState extends State<StudentSignup> {
             ),
             SingleChildScrollView(
               child: Container(
-                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.2 ,
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.24 ,
                     left: 40,
                     right: 40),
                 color: Colors.transparent,
@@ -52,6 +52,7 @@ class _StudentSignupState extends State<StudentSignup> {
                         Padding(
                           padding: const EdgeInsets.only(left: 50),
                           child: DropdownButton<String>(
+                            dropdownColor: Colors.grey.shade200,
                             value: _Division,
                             items: ['A', 'B', 'C', 'D'].map<DropdownMenuItem<String>>((String value) {
                               return DropdownMenuItem<String>(
@@ -78,6 +79,7 @@ class _StudentSignupState extends State<StudentSignup> {
                         Padding(
                           padding: const EdgeInsets.only(left: 80),
                           child: DropdownButton<String>(
+                            dropdownColor: Colors.grey.shade200,
                             value: _Year,
                             items: ['FE', 'SE', 'TE', 'BE'].map<DropdownMenuItem<String>>((String value) {
                               return DropdownMenuItem<String>(
