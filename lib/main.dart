@@ -1,3 +1,4 @@
+import 'package:qr_attendance/Student/StudentLogin.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_attendance/Login.dart';
@@ -23,6 +24,7 @@ Future<void> main() async {
       'teacher button': (context)=>TeacherloginSignUp(),
       'student button': (context)=>StudentloginSignUp(),
       'teacher login button': (context)=>Teacherlogin(),
+      'student login button': (context)=>Studentlogin(),
     },
   ),
   );

@@ -32,7 +32,16 @@ class LoginPage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(''),
+                    Text('You are a',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w500,
+                      ),
+
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
                     Teacher(),
                     SizedBox(
                       height: 30,
