@@ -46,7 +46,9 @@ class StudentloginSignUp extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          ElevatedButton(onPressed: () {},
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, 'student signup button');
+          },
             child: Container(
               width: 200,
               height: 100,
