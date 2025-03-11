@@ -1,3 +1,4 @@
+import 'package:qr_attendance/Student/Student.dart';
 import 'package:qr_attendance/Student/StudentLogin.dart';
 import 'package:qr_attendance/Student/StudentSignup.dart';
 import 'package:qr_attendance/Teacher/TeacherSignup.dart';
@@ -31,6 +32,7 @@ Future<void> main() async {
       'teacher': (context)=>TeacherPage(),
       'teacher signup button': (context)=>TeacherSignup(),
       'student signup button': (context)=>StudentSignup(),
+      'student': (context)=>StudentPage(),
     },
   ),
   );
