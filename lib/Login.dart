@@ -16,11 +16,11 @@ class LoginPage extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              padding: EdgeInsets.only(left: 25 , top: 90),
+              padding: EdgeInsets.only(left: 35 , top: 90),
               child: Text('My Attendance' ,
                 style: TextStyle(
                   decoration: TextDecoration.none,
-                  fontSize: 40,
+                  fontSize: 45,
                   fontWeight: FontWeight.bold,
                   color: Colors.black
                 ),

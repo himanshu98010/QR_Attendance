@@ -46,7 +46,7 @@ class _StudentloginState extends State<Studentlogin> {
               ),
               SingleChildScrollView(
                 child: Container(
-                  padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.5 ,
+                  padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.4 ,
                       left: 40,
                       right: 40),
                   color: Colors.transparent,
@@ -105,8 +105,8 @@ class _StudentloginState extends State<Studentlogin> {
                         ),
                         child: Container(
 
-                          width: 200,
-                          height: 100,
+                          width: 100,
+                          height: 50,
                           child: const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [

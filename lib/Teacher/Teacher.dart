@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class TeacherPage extends StatefulWidget {
    TeacherPage({super.key});
 
@@ -10,6 +11,11 @@ class TeacherPage extends StatefulWidget {
 
 class _TeacherState extends State<TeacherPage> {
   String? SelectedClass;
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,18 +25,26 @@ class _TeacherState extends State<TeacherPage> {
       child: Stack(
         children: [
           Container(
-            padding: EdgeInsets.only(left: 25 , top: 50),
+            padding: EdgeInsets.only(left: 25 , top: 70),
+            child: ElevatedButton(
+                onPressed: Navigator.pushNamed(context,),
+                child: Icon(Icons.add)
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.only(left: 25 , top: 70),
             child: Text('Take Attendance' ,
             style: TextStyle(
               decoration: TextDecoration.none,
               color: Colors.black,
-              fontSize: 40 ,
+              fontSize: 50 ,
               fontWeight: FontWeight.bold,
             ),
             ),
           ),
+
           Container(
-            padding: EdgeInsets.only(left: 80 , top: 300),
+            padding: EdgeInsets.only(left: 55 , top: 450),
             child: Scaffold(
               backgroundColor: Colors.transparent,
             body:Container(
@@ -42,7 +56,7 @@ class _TeacherState extends State<TeacherPage> {
                 dropdownColor: Colors.white,
                   value: SelectedClass,
                   items: <String>[
-                    'SE_B_EM4'
+                    'SE_B_EM4' , 'SE_B_AOA' , 'SE_B_DS' , 'SE_B_OS' , 'SE_B_MP'
                   ].map<DropdownMenuItem<String>>((String value){
                    return DropdownMenuItem<String>(
                      value: value,
@@ -69,7 +83,7 @@ class _TeacherState extends State<TeacherPage> {
           ),
           ),
           Container(
-            padding: EdgeInsets.only(left: 105 , top: 500),
+            padding: EdgeInsets.only(left: 85 , top: 600),
             child: Container(
 
               height: 50,
@@ -80,9 +94,11 @@ class _TeacherState extends State<TeacherPage> {
               ),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)
+                  ),
                 ),
-                  onPressed: (){}, 
+                  onPressed: (){},
                   child: Text('Generate QR')
               ),
             ),

@@ -1,28 +1,30 @@
-
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-Future<void> StudentSignUpID(BuildContext context ,String ID, String password , String Div , String Year , String Name , int Roll  ) async {
+Future<void> CreateClass(BuildContext context ,String TID, String Classname  ) async {
   final supabase = Supabase.instance.client;
 
-
+if (Classname.isNotEmpty ) {
   try {
     // Attempt to insert the new user into the table
-    final response = await supabase.from('student').insert(
-      {'id' : ID , 'password' : password , 'year' : Year , 'division' : Div , 'name' : Name , 'roll no' : Roll}
+    final response = await supabase.from('teacherclasses').insert(
+        {'tid': TID, 'classes': Classname}
     );
 
     if (response == null) {
-      _showSuccessPopup(context );
+      _showSuccessPopup(context);
     } else {
       // Success
 
-      _showErrorPopup(context , 'Error: ${response.error.message}');
+      _showErrorPopup(context, 'Error: ${response.error.message}');
     }
   } catch (e) {
     // Handle unexpected errors
-    _showErrorPopup(context , 'An unexpected error occurred: $e');
+    _showErrorPopup(context, 'An unexpected error occurred: $e');
   }
+}else{
+  _showErrorPopup(context, 'Please enter a classname');
+}
 }
 void _showErrorPopup(BuildContext context, String message) {
   showDialog(
@@ -45,10 +47,10 @@ void _showSuccessPopup(BuildContext context) {
     context: context,
     builder: (context) => AlertDialog(
       title: Text('Success'),
-      content: Text('Successfully signed up!'),
+      content: Text('Successfully Created Class!'),
       actions: [
         TextButton(
-          onPressed: () => Navigator.pushNamed(context, 'student login button'),
+          onPressed: () => Navigator.pop(context),
           child: Text('OK'),
         ),
       ],

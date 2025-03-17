@@ -1,39 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-String _currentID = '';
-void setCurrentUserID(String Id){
-  _currentID = Id;
+String _currentTeacherID = '';
+void setCurrentTeacherID(String Id){
+  _currentTeacherID = Id;
 }
 
-String getCurrentUserID(){
-  return _currentID;
+String getCurrentTeacherID(){
+  return _currentTeacherID;
 }
 
-String _currentName = 'hahah';
-void setCurrentUserName(String Name){
-  _currentName = Name;
+String _currentTeacherName = 'hahah';
+void setCurrentTeacherName(String Name){
+  _currentTeacherName = Name;
 }
 
-String getCurrentUserName(){
-  return _currentName;
+String getCurrentTeacherName(){
+  return _currentTeacherName;
 }
 
-Future<void> signInCustomID(BuildContext context ,String customID, String password) async {
+Future<void> signInCustomTeacherID(BuildContext context ,String customID, String password) async {
   final supabase = Supabase.instance.client;
   final response = await supabase
-      .from('student')
+      .from('teacher')
       .select('*')
-      .eq('id', customID);
+      .eq('tid', customID);
 
   if (response != null && response.length > 0) {
-    final  userID = response[0]['id'];
+    final  userID = response[0]['tid'];
     final storedPassword = response[0]['password'];
     String userName = response[0]['name'];
 
     if(password == storedPassword){
-      setCurrentUserID(userID);
-      setCurrentUserName(userName);
+      setCurrentTeacherID(userID);
+      setCurrentTeacherName(userName);
       _showSuccessPopup(context);
 
     }else{
@@ -87,11 +87,10 @@ void _showSuccessPopup(BuildContext context) {
       content: Text('User Logged In Successfully'),
       actions: [
         TextButton(
-          onPressed: () => Navigator.pushNamed(context,'student'),
+          onPressed: () => Navigator.pushNamed(context,'teacher'),
           child: Text('OK'),
         ),
       ],
     ),
   );
 }
-

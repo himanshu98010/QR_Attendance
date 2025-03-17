@@ -46,7 +46,7 @@ class _StudentSignupState extends State<StudentSignup> {
             children: [
               Container(
                 color: Colors.transparent,
-                padding: EdgeInsets.only(left: 20, top:100),
+                padding: EdgeInsets.only(left: 45, top:100),
                 child: Text('Student Signup' ,
                   style: TextStyle(
                     decoration: TextDecoration.none,
@@ -185,7 +185,8 @@ class _StudentSignupState extends State<StudentSignup> {
           
                               fillColor: Colors.grey.shade200,
                               filled: true,
-                              hintText: 'Enter your Student ID',
+                              helperText: 'example - SE_B_129',
+                              hintText: 'Enter your Student ID ',
                               border: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     width: 10,
@@ -245,7 +246,7 @@ class _StudentSignupState extends State<StudentSignup> {
                           child: const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("LOGIN" , style: TextStyle(
+                              Text("Sign-Up" , style: TextStyle(
                                   color: Colors.black87,
                                   fontSize: 20
           
